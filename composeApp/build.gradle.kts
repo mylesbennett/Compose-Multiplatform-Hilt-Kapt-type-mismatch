@@ -1,10 +1,11 @@
-import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.compose.ExperimentalComposeLibrary
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsCompose)
+    kotlin("kapt")
+    alias(libs.plugins.hilt)
 }
 
 kotlin {
@@ -22,6 +23,8 @@ kotlin {
             implementation(libs.compose.ui)
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
+            implementation(libs.dagger.hilt)
+            kapt(libs.dagger.hilt.compiler)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
