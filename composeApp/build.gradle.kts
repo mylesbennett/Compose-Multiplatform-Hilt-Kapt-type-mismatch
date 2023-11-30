@@ -4,7 +4,7 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsCompose)
-    kotlin("kapt")
+    alias(libs.plugins.kapt)
     alias(libs.plugins.hilt)
 }
 
