@@ -16,15 +16,13 @@ kotlin {
             }
         }
     }
-    
+
     sourceSets {
-        
+
         androidMain.dependencies {
             implementation(libs.compose.ui)
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
-            implementation(libs.dagger.hilt)
-            kapt(libs.dagger.hilt.compiler)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -72,6 +70,8 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     dependencies {
+        implementation(libs.dagger.hilt)
+        add("kapt", libs.dagger.hilt.compiler)
         debugImplementation(libs.compose.ui.tooling)
     }
 }

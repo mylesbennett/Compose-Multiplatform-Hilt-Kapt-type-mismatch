@@ -1,3 +1,11 @@
+allprojects {
+    repositories {
+        maven(url = "https://oss.sonatype.org/content/repositories/snapshots")
+        google()
+        mavenCentral()
+    }
+}
+
 plugins {
     // this is necessary to avoid the plugins to be loaded multiple times
     // in each subproject's classloader
